@@ -98,6 +98,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .navigation button {
@@ -146,10 +147,10 @@
 
 
 @media screen and (max-width: 480px) {
-  .question,.result{
+  .question,.result, .home{
     width: 90vw;
   }
-  .next-button, .submit-button, .home-button {
+  .next-button, .submit-button, .home-button, .start-button {
     width: 35vw;
   }
 }
