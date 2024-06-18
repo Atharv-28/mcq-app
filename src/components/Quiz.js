@@ -32,10 +32,17 @@ const Quiz = () => {
     setCurrentQuestion(index);
   };
 
+  const startQuiz = () => {
+    setCurrentQuestion(0);
+    setScore(0);
+    setAnswers(Array(questions.length).fill(null));
+    setShowResult(false);
+  };
+
   return (
     <div className="quiz">
       {showResult ? (
-        <Result score={score} total={questions.length} />
+        <Result score={score} total={questions.length} startQuiz={startQuiz} />
       ) : (
         <Question
           questionData={questions[currentQuestion]}
@@ -44,6 +51,7 @@ const Quiz = () => {
           totalQuestions={questions.length}
           handleNext={handleNext}
           goToQuestion={goToQuestion}
+          selectedOption={answers[currentQuestion]}
         />
       )}
     </div>
