@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Result = ({ score, total, startQuiz }) => {
+const Result = ({ score, total, goToHomePage }) => {
   const percentage = (score / total) * 100;
   const resultMessage = percentage >= 35 ? "Pass" : "Failed";
 
@@ -10,7 +10,7 @@ const Result = ({ score, total, startQuiz }) => {
       <p>{score} out of {total}</p>
       <p>Percentage: {percentage.toFixed(2)}%</p>
       <p>Result: {resultMessage}</p>
-      <button onClick={startQuiz} className="home-button">Go to Home Page</button>
+      <button onClick={goToHomePage} className="home-button">Go to Home Page</button>
     </div>
   );
 };
